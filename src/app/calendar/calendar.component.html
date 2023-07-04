@@ -1,4 +1,8 @@
 <div class="grid-container">
+    <div class="grid-week-days"
+    *ngFor="let weekDay of weekDays">
+        {{weekDay}}
+    </div>
     <app-day class="grid-items"
         *ngFor="let day of month"
         [day]="day">

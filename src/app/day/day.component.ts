@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { DayService } from './day.service';
 
 @Component({
   selector: 'app-day',
@@ -6,5 +7,10 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./day.component.css']
 })
 export class DayComponent {
-@Input() day : string;
+@Input() day : Date;
+clicked: boolean = false;
+constructor(dayService: DayService){
+}
+
+onSelectItem()
 }

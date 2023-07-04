@@ -6,5 +6,15 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent {
-@Input() month : string[];
+@Input() month : Date[];
+
+weekDays: string[] = [
+  'Mon',
+  'Tue',
+  'Wed',
+  'Thu',
+  'Fri',
+  'Sat',
+  'Sun'
+];
 }

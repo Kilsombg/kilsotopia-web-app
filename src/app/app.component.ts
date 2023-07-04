@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'calendar-web-app';
-  month : string[] = [];
+  month : Date[] = [];
 
   constructor() {
     for(let i=1;i<31;i++)
-      this.month.push(String(i));
+      this.month.push(new Date(2021,0,i));
   }
 }

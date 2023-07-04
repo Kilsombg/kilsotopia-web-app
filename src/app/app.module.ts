@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { DayComponent } from './day/day.component';
+import { DayService } from './day/day.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,9 @@ import { DayComponent } from './day/day.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    DayService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

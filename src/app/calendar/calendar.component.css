@@ -2,7 +2,12 @@
     background-color: #EEE;
 display: grid;
 grid-template-columns: repeat(7, auto);
-grid-template-rows: repeat(6, 120px);
+grid-template-rows: auto repeat(6, 120px);
+}
+
+.grid-week-days {
+    text-align: center;
+    padding: 1.7%;
 }
 
 .grid-items {
