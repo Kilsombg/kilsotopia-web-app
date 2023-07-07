@@ -9,9 +9,9 @@ export class DayService {
 
     setSelectedDay(newDay : Day) {
         newDay.isSelected = true;
-        console.log("previous: ",this.selectedDay);
+        console.log("previous: ",this.selectedDay.asObservable());
         this.selectedDay.next(newDay);
-        console.log("current: ",this.selectedDay);
+        console.log("current: ",this.selectedDay.asObservable());
     }
 
     createDay(date: Date) : Day {

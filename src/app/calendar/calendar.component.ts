@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Day } from '../day/day.model';
+import { DayService } from '../day/day.service';
 
 @Component({
   selector: 'app-calendar',
@@ -19,7 +20,10 @@ weekDays: string[] = [
   'Sun'
 ];
 
+constructor(private dayService : DayService) {
+}
+
 onCLick(day:Day) {
-  console.log(day.date);
+  this.dayService.setSelectedDay(day);
 }
 }

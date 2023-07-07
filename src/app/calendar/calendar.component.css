@@ -10,9 +10,16 @@ grid-template-rows: auto repeat(6, 120px);
     padding: 1.7%;
 }
 
-.grid-items {
-    background-color: #FFF;
-    border: 2px solid #EEE;
+.grid-items, .grid-items-selected {
     border-radius: 4px;
     padding: 4px;
 }
+
+.grid-items {
+    border: 2px solid #EEE;
+    background-color: #FFF;
+}
+
+.grid-items-selected {
+    border: 2px solid green;
+    background-color: #eee; }

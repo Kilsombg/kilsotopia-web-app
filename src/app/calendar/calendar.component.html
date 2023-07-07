@@ -4,6 +4,7 @@
         {{weekDay}}
     </div>
     <app-day class="grid-items"
+        [ngClass]="{'grid-items-selected': day.isSelected}"
         *ngFor="let day of month"
         [day]="day"
         (click)="onCLick(day)">
