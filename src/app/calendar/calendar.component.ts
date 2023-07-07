@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Day } from '../day/day.model';
 
 @Component({
   selector: 'app-calendar',
@@ -6,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent {
-@Input() month : Date[];
+@Input() month : Day[];
 
 weekDays: string[] = [
   'Mon',
@@ -17,4 +18,8 @@ weekDays: string[] = [
   'Sat',
   'Sun'
 ];
+
+onCLick(day:Day) {
+  console.log(day.date);
+}
 }

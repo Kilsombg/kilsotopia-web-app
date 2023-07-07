@@ -5,6 +5,7 @@
     </div>
     <app-day class="grid-items"
         *ngFor="let day of month"
-        [day]="day">
+        [day]="day"
+        (click)="onCLick(day)">
     </app-day>
 </div>

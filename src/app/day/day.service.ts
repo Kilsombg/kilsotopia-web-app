@@ -13,4 +13,8 @@ export class DayService {
         this.selectedDay.next(newDay);
         console.log("current: ",this.selectedDay);
     }
+
+    createDay(date: Date) : Day {
+        return new Day(date);
+    }
 }
