@@ -13,7 +13,7 @@ export class DayService {
         this.selectedDay.subscribe()
         this.selectedDay.next(newDay);
         console.log("current: ",this.selectedDay.asObservable());
-    }frefer;
+    }
 
     createDay(date: Date) : Day {
         return new Day(date);
