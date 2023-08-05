@@ -27,3 +27,4 @@ onCLick(day:Day) {
   this.dayService.setSelectedDay(day);
 }
 }
+

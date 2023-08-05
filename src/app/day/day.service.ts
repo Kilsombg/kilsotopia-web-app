@@ -10,7 +10,6 @@ export class DayService {
     setSelectedDay(newDay : Day) {
         newDay.isSelected = true;
         console.log("previous: ",this.selectedDay.asObservable());
-        this.selectedDay.subscribe()
         this.selectedDay.next(newDay);
         console.log("current: ",this.selectedDay.asObservable());
     }
