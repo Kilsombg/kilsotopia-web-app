@@ -25,5 +25,6 @@ constructor(private dayService : DayService) {
 
 onCLick(day:Day) {
   this.dayService.setSelectedDay(day);
+  this.dayService.openDialog(day);
 }
 }
