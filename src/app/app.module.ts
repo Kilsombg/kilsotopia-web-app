@@ -11,6 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { DayDialogComponent } from './day-dialog/day-dialog.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatInputModule,
     FormsModule,
     BrowserAnimationsModule,
+    CKEditorModule,
   ],
   providers: [
     DayService,

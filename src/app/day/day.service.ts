@@ -11,8 +11,8 @@ export class DayService {
 
     openDialog(day: Day) : void {
         let dc = new MatDialogConfig();
-        dc.width = '250px';
-        dc.height = '300px';
+        dc.width = '800px';
+        dc.height = '600px';
         dc.data = day;
 
         const dialogRef = this.dialog.open(DayDialogComponent, dc);
