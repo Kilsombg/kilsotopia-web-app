@@ -8,7 +8,7 @@ import { DayService } from '../day/day.service';
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent {
-@Input() month : Day[];
+  month : Day[] = [];
 
 weekDays: string[] = [
   'Mon',
@@ -21,6 +21,8 @@ weekDays: string[] = [
 ];
 
 constructor(private dayService : DayService) {
+  for(let i=1;i<31;i++)
+    this.month.push(this.dayService.createDay(new Date(2021,0,i)));
 }
 
 onCLick(day:Day) {
@@ -28,3 +30,4 @@ onCLick(day:Day) {
   this.dayService.openDialog(day);
 }
 }
+

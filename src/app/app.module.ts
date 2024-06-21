@@ -12,15 +12,24 @@ import { DayDialogComponent } from './day-dialog/day-dialog.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { NavigationBarComponent } from './navigation-bar/navigaiton-bar.component';
+import { NotImplementedComponent } from './not-implemented/not-implemented.component';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { routes } from './navigation-bar/routes';
 @NgModule({
   declarations: [
     AppComponent,
     CalendarComponent,
     DayComponent,
-    DayDialogComponent
+    NavigationBarComponent,
+    DayDialogComponent,
+    NotImplementedComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
+    RouterModule.forRoot(routes),
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
