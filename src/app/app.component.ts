@@ -6,14 +6,10 @@ import { Day } from './day/day.model';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css',
-              '../assets/styles/template.css']
+    '../assets/styles/template.css']
 })
 export class AppComponent {
   title = 'calendar-web-app';
-  month : Day[] = [];
 
-  constructor(private dayService : DayService) {
-    for(let i=1;i<31;i++)
-      this.month.push(this.dayService.createDay(new Date(2021,0,i)));
-  }
+  constructor() { }
 }

@@ -6,18 +6,23 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { DayComponent } from './day/day.component';
 import { DayService } from './day/day.service';
 import { CommonModule } from '@angular/common';
-import { AsyncPipeComponent } from './navigation_bar/navigaiton_bar.component';
+import { NavigationBarComponent } from './navigation-bar/navigaiton-bar.component';
+import { NotImplementedComponent } from './not-implemented/not-implemented.component';
+import { RouterModule } from '@angular/router';
+import { routes } from './navigation-bar/routes';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalendarComponent,
     DayComponent,
-    AsyncPipeComponent
+    NavigationBarComponent,
+    NotImplementedComponent
   ],
   imports: [
     BrowserModule,
-    CommonModule
+    CommonModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [
     DayService
