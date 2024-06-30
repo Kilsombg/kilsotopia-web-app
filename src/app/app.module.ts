@@ -17,6 +17,8 @@ import { NotImplementedComponent } from './not-implemented/not-implemented.compo
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { routes } from './navigation-bar/routes';
+import { HttpClientModule } from '@angular/common/http';
+import { HTTPService } from './services/http.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,9 +38,11 @@ import { routes } from './navigation-bar/routes';
     FormsModule,
     BrowserAnimationsModule,
     CKEditorModule,
+    HttpClientModule
   ],
   providers: [
     DayService,
+    HTTPService,
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
   ],
   bootstrap: [AppComponent]
