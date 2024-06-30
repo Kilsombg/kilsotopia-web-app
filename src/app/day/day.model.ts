@@ -1,7 +1,8 @@
 export class Day {
     date: Date;
-    notes: String;
+    notes: String ="";
     isSelected: boolean = false;
+    id: number;
 
     constructor(date: Date) {
         this.date = date;

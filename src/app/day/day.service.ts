@@ -1,15 +1,19 @@
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, Subject, map } from "rxjs";
+import { BehaviorSubject, Observable, Subject, map } from "rxjs";
 import { Day } from "./day.model";
 import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
 import { DayDialogComponent } from "../day-dialog/day-dialog.component";
+import { HTTPService } from "../services/http.service";
 
 @Injectable()
 export class DayService {
 
-    constructor(public dialog: MatDialog) { }
+    constructor(
+        private dialog: MatDialog,
+        private httpService: HTTPService
+    ) { }
 
-    openDialog(day: Day) : void {
+    openDialog(day: Day): void {
         let dc = new MatDialogConfig();
         dc.width = '800px';
         dc.height = '600px';
@@ -28,7 +32,12 @@ export class DayService {
         newDay.isSelected = !newDay.isSelected;
     }
 
-    createDay(date: Date): Day {
+    createDay(index: number): Day {
+        var date = new Date(Date.now() + (1000 * 60 * 60 * 24 * index));
         return new Day(date);
+    }
+
+    getNotes(): Observable<Day[]> {
+        return this.httpService.getNotes();
     }
 }
