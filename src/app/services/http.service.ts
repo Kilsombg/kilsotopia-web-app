@@ -13,4 +13,12 @@ export class HTTPService {
     public getNotes(): Observable<any> {
         return this.http.get(this.calendarDataUrl + "/note");
     }
+
+    public insertNote(day: Day): Observable<any> {
+        return this.http.post(this.calendarDataUrl, day);
+    }
+
+    public updateNote(day: Day): Observable<any> {
+        return this.http.put(this.calendarDataUrl + "/" + day.id, day.notes);
+    }
 }
