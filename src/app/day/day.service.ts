@@ -1,33 +1,12 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { Day } from "./day.model";
-import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
-import { DayDialogComponent } from "../day-dialog/day-dialog.component";
 import { HTTPService } from "../services/http.service";
-import { cloneDeep } from 'lodash';
 
 @Injectable()
 export class DayService {
 
-    constructor(
-        private dialog: MatDialog,
-        private httpService: HTTPService
-    ) { }
-
-    openDialog(day: Day): void {
-        let dc = new MatDialogConfig();
-        dc.width = '800px';
-        dc.height = '600px';
-        dc.data = cloneDeep(day);
-
-        const dialogRef = this.dialog.open(DayDialogComponent, dc);
-
-        dialogRef.afterClosed().subscribe(result => {
-            console.log("The dialog is closed");
-            if (result !== undefined) { day.notes = result; }
-            day.isSelected = false;
-        })
-    }
+    constructor(private httpService: HTTPService) { }
 
     setSelectedDay(newDay: Day): void {
         newDay.isSelected = !newDay.isSelected;

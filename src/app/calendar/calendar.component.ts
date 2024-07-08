@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Day } from '../day/day.model';
 import { DayService } from '../day/day.service';
 import { DayHelper } from '../helpers/day.helper';
+import { DayDialogService } from '../day-dialog/day-dialog.service';
 
 @Component({
   selector: 'app-calendar',
@@ -22,7 +23,10 @@ export class CalendarComponent implements OnInit {
     'Sun'
   ];
 
-  constructor(private dayService: DayService) { }
+  constructor(
+    private dayService: DayService,
+    private dayDialogService: DayDialogService
+  ) { }
 
   ngOnInit(): void {
     for (let i = 0; i < 31; i++)
@@ -37,7 +41,7 @@ export class CalendarComponent implements OnInit {
 
   onCLick(day: Day) {
     this.dayService.setSelectedDay(day);
-    this.dayService.openDialog(day);
+    this.dayDialogService.openDialog(day);
   }
 
   setNotes(notes: Day[]): void {
