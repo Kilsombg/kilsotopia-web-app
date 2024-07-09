@@ -51,6 +51,7 @@ export class CalendarComponent implements OnInit {
           note.date.getMonth() === day.date.getMonth() &&
           note.date.getFullYear() === day.date.getFullYear()) {
           day.notes = note.notes;
+          day.id = note.id;
         }
       })
     });
