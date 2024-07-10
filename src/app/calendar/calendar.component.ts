@@ -10,8 +10,12 @@ import { DayDialogService } from '../day-dialog/day-dialog.service';
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent implements OnInit {
-  month: Day[] = [];
+  calendarDays: Day[] = [];
   notes: Day[] = [];
+  monthOffset: number = 0;
+  yearOffset: number = 0;
+  currentMonth: number;
+  currentYear: number;
 
   weekDays: string[] = [
     'Mon',
@@ -26,17 +30,25 @@ export class CalendarComponent implements OnInit {
   constructor(
     private dayService: DayService,
     private dayDialogService: DayDialogService
-  ) { }
+  ) {
+    this.initialize();
+  }
 
   ngOnInit(): void {
-    for (let i = 0; i < 31; i++)
-      this.month.push(this.dayService.createDay(i));
+    this.calendarDays = this.dayService.getCalendarDays(this.currentMonth + this.monthOffset, this.currentYear + this.yearOffset);
 
     this.dayService.getNotes()
       .subscribe(value => {
         this.notes = DayHelper.transformDayArray(value);
         this.setNotes(value);
       });
+  }
+
+  initialize() {
+    var currentDate = new Date(Date.now());
+
+    this.currentMonth = currentDate.getMonth();
+    this.currentYear = currentDate.getFullYear();
   }
 
   onCLick(day: Day) {
@@ -46,7 +58,7 @@ export class CalendarComponent implements OnInit {
 
   setNotes(notes: Day[]): void {
     notes.forEach(note => {
-      this.month.forEach(day => {
+      this.calendarDays.forEach(day => {
         if (note.date.getDate() === day.date.getDate() &&
           note.date.getMonth() === day.date.getMonth() &&
           note.date.getFullYear() === day.date.getFullYear()) {

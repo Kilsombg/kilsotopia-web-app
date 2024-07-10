@@ -5,7 +5,7 @@
     </div>
     <app-day class="grid-items"
         [ngClass]="{'grid-items-selected': day.isSelected}"
-        *ngFor="let day of month"
+        *ngFor="let day of calendarDays"
         [day]="day"
         (click)="onCLick(day)">
     </app-day>

@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HTTPService } from './services/http.service';
 import { DayHelper } from './helpers/day.helper';
 import { DayDialogService } from './day-dialog/day-dialog.service';
+import { DateHelper } from './helpers/date.helper';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +47,7 @@ import { DayDialogService } from './day-dialog/day-dialog.service';
     DayService,
     HTTPService,
     DayHelper,
+    DateHelper,
     DayDialogService,
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
   ],
