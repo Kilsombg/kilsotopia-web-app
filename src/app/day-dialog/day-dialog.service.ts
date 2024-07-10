@@ -4,6 +4,8 @@ import { Day } from "../day/day.model";
 import { DayDialogComponent } from "./day-dialog.component";
 import { cloneDeep } from 'lodash';
 import { HTTPService } from "../services/http.service";
+import { DayType } from "../day/day-type";
+import { DateHelper } from "../helpers/date.helper";
 
 @Injectable()
 export class DayDialogService {
@@ -34,7 +36,10 @@ export class DayDialogService {
     resolveClosing(dialogRef: MatDialogRef<DayDialogComponent, any>, day: Day) {
         dialogRef.afterClosed().subscribe(result => {
             console.log("The dialog is closed");
-            day.isSelected = false;
+
+            if (!DateHelper.checkCurrentDate(day.date)) { day.dayType = DayType.NORMAL; }
+            else { day.dayType = DayType.CURRENT; }
+
             if (result !== undefined) {
                 this.resolve(result, day);
             }

@@ -4,7 +4,11 @@
         {{weekDay}}
     </div>
     <app-day class="grid-items"
-        [ngClass]="{'grid-items-selected': day.isSelected}"
+    [ngClass]="{
+    'grid-items-selected': day.dayType === dayType.SELECTED,
+    'grid-items-current-day': day.dayType === dayType.CURRENT,
+    'grid-items-day-outside-of-month': day.dayType === dayType.OUTSIDE
+    }"
         *ngFor="let day of calendarDays"
         [day]="day"
         (click)="onCLick(day)">

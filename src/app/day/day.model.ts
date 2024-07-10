@@ -1,7 +1,9 @@
+import { DayType } from "./day-type";
+
 export class Day {
     date: Date;
     notes: String ="";
-    isSelected: boolean = false;
+    dayType: DayType = DayType.NORMAL;
     id: number;
 
     constructor(date: Date) {

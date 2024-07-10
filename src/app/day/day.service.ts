@@ -3,14 +3,14 @@ import { Observable } from "rxjs";
 import { Day } from "./day.model";
 import { HTTPService } from "../services/http.service";
 import { DateHelper } from "../helpers/date.helper";
+import { DayType } from "./day-type";
 
 @Injectable()
 export class DayService {
-
     constructor(private httpService: HTTPService) { }
 
     setSelectedDay(newDay: Day): void {
-        newDay.isSelected = !newDay.isSelected;
+        newDay.dayType = DayType.SELECTED;
     }
 
     getCalendarDays(month: number, year: number): Day[] {

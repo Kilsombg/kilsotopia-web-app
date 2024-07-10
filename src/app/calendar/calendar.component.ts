@@ -1,8 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Day } from '../day/day.model';
 import { DayService } from '../day/day.service';
 import { DayHelper } from '../helpers/day.helper';
 import { DayDialogService } from '../day-dialog/day-dialog.service';
+import { DayType } from '../day/day-type';
+import { DateHelper } from '../helpers/date.helper';
 
 @Component({
   selector: 'app-calendar',
@@ -10,6 +12,7 @@ import { DayDialogService } from '../day-dialog/day-dialog.service';
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent implements OnInit {
+  dayType = DayType;
   calendarDays: Day[] = [];
   notes: Day[] = [];
   monthOffset: number = 0;
@@ -31,12 +34,16 @@ export class CalendarComponent implements OnInit {
     private dayService: DayService,
     private dayDialogService: DayDialogService
   ) {
-    this.initialize();
+    this.initializeProperties();
   }
 
   ngOnInit(): void {
-    this.calendarDays = this.dayService.getCalendarDays(this.currentMonth + this.monthOffset, this.currentYear + this.yearOffset);
+    this.initializeDays();
 
+    this.subscribeToNotes();
+  }
+
+  subscribeToNotes() {
     this.dayService.getNotes()
       .subscribe(value => {
         this.notes = DayHelper.transformDayArray(value);
@@ -44,7 +51,23 @@ export class CalendarComponent implements OnInit {
       });
   }
 
-  initialize() {
+  initializeDays() {
+    this.calendarDays = this.dayService.getCalendarDays(this.currentMonth + this.monthOffset, this.currentYear + this.yearOffset);
+
+    this.setCalendarDayTypes();
+  }
+
+  setCalendarDayTypes() {
+    this.calendarDays.forEach(day => {
+      if(DateHelper.checkCurrentDate(day.date)){
+        day.dayType = DayType.CURRENT;
+      } else if(day.date.getMonth() !== this.currentMonth){
+        day.dayType = DayType.OUTSIDE;
+      }
+    });
+  }
+
+  initializeProperties() {
     var currentDate = new Date(Date.now());
 
     this.currentMonth = currentDate.getMonth();
@@ -59,9 +82,7 @@ export class CalendarComponent implements OnInit {
   setNotes(notes: Day[]): void {
     notes.forEach(note => {
       this.calendarDays.forEach(day => {
-        if (note.date.getDate() === day.date.getDate() &&
-          note.date.getMonth() === day.date.getMonth() &&
-          note.date.getFullYear() === day.date.getFullYear()) {
+        if (DateHelper.checkEquality(note.date, day.date)) {
           day.notes = note.notes;
           day.id = note.id;
         }
