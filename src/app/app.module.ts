@@ -6,12 +6,11 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotImplementedComponent } from './not-implemented/not-implemented.component';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { routes } from './calendar/sidebar/routes';
 import { HttpClientModule } from '@angular/common/http';
 import { HTTPService } from './services/http.service';
 import { DateHelper } from './helpers/date.helper';
 import { CalendarModule } from './calendar/calendar.module';
+import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,11 +19,11 @@ import { CalendarModule } from './calendar/calendar.module';
   imports: [
     BrowserModule,
     CommonModule,
-    RouterModule.forRoot(routes),
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    CalendarModule
+    CalendarModule,
+    AppRoutingModule
   ],
   exports:[
     NotImplementedComponent

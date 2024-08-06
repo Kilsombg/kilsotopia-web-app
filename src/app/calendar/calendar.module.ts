@@ -12,6 +12,7 @@ import { DayHelper } from './helpers/day.helper';
 import { DayDialogService } from './day-dialog/day-dialog.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     CKEditorModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [
     DayHelper,
