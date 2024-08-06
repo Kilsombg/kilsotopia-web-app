@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { Day } from "./day.model";
-import { HTTPService } from "../services/http.service";
-import { DateHelper } from "../helpers/date.helper";
+import { HTTPService } from "../../services/http.service";
+import { DateHelper } from "../../helpers/date.helper";
 import { DayType } from "./day-type";
 
 @Injectable()

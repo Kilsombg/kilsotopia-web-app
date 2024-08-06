@@ -1,11 +1,11 @@
 import { Injectable } from "@angular/core";
 import { MatDialog, MatDialogConfig, MatDialogRef } from "@angular/material/dialog";
-import { Day } from "../day/day.model";
 import { DayDialogComponent } from "./day-dialog.component";
 import { cloneDeep } from 'lodash';
-import { HTTPService } from "../services/http.service";
+import { HTTPService } from "src/app/services/http.service";
+import { Day } from "../day/day.model";
+import { DateHelper } from "src/app/helpers/date.helper";
 import { DayType } from "../day/day-type";
-import { DateHelper } from "../helpers/date.helper";
 
 @Injectable()
 export class DayDialogService {

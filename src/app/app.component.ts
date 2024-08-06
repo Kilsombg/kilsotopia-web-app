@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { DayService } from './day/day.service';
-import { Day } from './day/day.model';
+import { DayService } from './calendar/day/day.service';
+import { Day } from './calendar/day/day.model';
 
 @Component({
   selector: 'app-root',
