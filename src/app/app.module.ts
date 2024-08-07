@@ -11,10 +11,12 @@ import { HTTPService } from './services/http.service';
 import { DateHelper } from './helpers/date.helper';
 import { CalendarModule } from './calendar/calendar.module';
 import { AppRoutingModule } from './app-routing.module';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NotImplementedComponent
+    NotImplementedComponent,
+    NavigationBarComponent
   ],
   imports: [
     BrowserModule,

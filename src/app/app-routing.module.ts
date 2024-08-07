@@ -13,6 +13,8 @@ const routes: Routes = [
       { path: 'notes', component: NotImplementedComponent }
     ]
   },
+  { path: 'home', component: NotImplementedComponent },
+  { path: 'others', component: NotImplementedComponent }
 ];
 
 @NgModule({
