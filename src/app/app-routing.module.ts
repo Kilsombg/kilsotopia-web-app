@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CalendarComponent } from './calendar/calendar/calendar.component';
 import { NotImplementedComponent } from './not-implemented/not-implemented.component';
 import { CalendarWrapperComponent } from './calendar/calendar-wrapper.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'calendar', pathMatch: 'full' },
@@ -13,7 +14,7 @@ const routes: Routes = [
       { path: 'notes', component: NotImplementedComponent }
     ]
   },
-  { path: 'home', component: NotImplementedComponent },
+  { path: 'home', component: HomepageComponent },
   { path: 'others', component: NotImplementedComponent }
 ];
 

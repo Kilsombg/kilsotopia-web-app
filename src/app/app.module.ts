@@ -12,6 +12,7 @@ import { DateHelper } from './helpers/date.helper';
 import { CalendarModule } from './calendar/calendar.module';
 import { AppRoutingModule } from './app-routing.module';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { HomepageModule } from './homepage/homepage.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
     BrowserAnimationsModule,
     HttpClientModule,
     CalendarModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HomepageModule
   ],
   exports:[
     NotImplementedComponent

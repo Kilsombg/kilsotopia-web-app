@@ -1,0 +1,20 @@
+header {
+    margin-left: -150px;
+    margin-top: -55px;
+    background-image: linear-gradient(rgba(96, 113, 118, 0.5), rgba(96, 113, 118, 0.5)), url(../../assets/images/hero.webp);
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 100vh;
+}
+
+
+h1 {
+    position: absolute;
+    transform: translate(10%, 300%);
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 400%;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+}
