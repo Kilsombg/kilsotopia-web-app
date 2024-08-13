@@ -1,20 +1,49 @@
 header {
     margin-left: -150px;
     margin-top: -55px;
-    background-image: linear-gradient(rgba(96, 113, 118, 0.5), rgba(96, 113, 118, 0.5)), url(../../assets/images/hero.webp);
+    background-color: #98c1d9;
+    /* background-image: linear-gradient(rgba(96, 113, 118, 0.5), rgba(96, 113, 118, 0.5)), url(../../assets/images/hero.webp); */
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: cover;
+    width: 100vw;
+    min-width: 100vw;
     height: 100vh;
+    min-height: 100vh;
+    max-height: none;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    overflow: hidden;
 }
 
 
 h1 {
     position: absolute;
-    transform: translate(10%, 300%);
+    transform: translate(25%, 100%);
     margin-top: 0;
     margin-bottom: 20px;
+}
+
+
+.bubble_path {
+    position: relative;
+    transform: translate(55%, 45%);
+    width: 960px;
+    height: 274, 5px;
+}
+
+
+ul {
+    margin-top: 60px;
+    margin-left: 55px;
+    position: absolute;
+}
+
+li {
+    display: block;
+}
+
+p {
     color: #fff;
-    font-size: 400%;
-    word-spacing: 4px;
-    letter-spacing: 1px;
 }
