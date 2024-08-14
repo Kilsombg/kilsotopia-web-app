@@ -1,0 +1,64 @@
+header {
+    margin-top: -55px;
+    background: rgb(6, 66, 96);
+    background: linear-gradient(90deg, rgba(6, 66, 96, 1) 19%, rgba(61, 90, 128, 1) 100%);
+    height: 520px;
+    overflow: hidden;
+}
+
+
+h1 {
+    position: absolute;
+    transform: translate(25%, 100%);
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+
+ul {
+    list-style: initial;
+    color: white;
+    margin-top: 60px;
+    margin-left: 85px;
+    position: absolute;
+}
+
+
+li {
+    display: inline-table;
+    text-align: center;
+    
+}
+
+li span {
+    display: table-cell;
+    vertical-align: middle;
+    height: 48px; /* icon's height */
+}
+
+
+.clear-body-content-margin {
+    margin-left: -150px;
+}
+
+
+.bubble_path {
+    position: relative;
+    transform: translate(50%, 45%);
+    width: 960px;
+    height: 274, 5px;
+}
+
+
+.features {
+    background-color: #023047;
+    height: 260px;
+}
+
+
+.homepage-icon {
+    width: 48px;
+    height: 48px;
+    margin-right: 15px;
+    margin-left: 30px;
+}

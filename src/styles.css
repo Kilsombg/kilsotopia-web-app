@@ -9,6 +9,23 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+h1 {
+    font-size: 60px;
+    font-weight: 350;
+    text-transform: uppercase;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    position: fixed;
+}
+
+
 .sidebar {
     height: 100vh;
     width: 150px;
@@ -21,5 +38,11 @@ body {
 
 .body-content {
     margin-left: 150px;
+    margin-top: 55px;
     display: block;
+}
+
+
+.filter-white {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
 }

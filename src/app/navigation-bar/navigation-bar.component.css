@@ -2,7 +2,7 @@ ul {
     list-style-type: none;
     margin: 0;
     overflow: hidden;
-    position: relative;
+    position: fixed;
     top: 0;
     width: 100%;
     background-color: #a0bdc6;
