@@ -1,19 +1,11 @@
 header {
     margin-left: -150px;
     margin-top: -55px;
-    background-color: #98c1d9;
-    /* background-image: linear-gradient(rgba(96, 113, 118, 0.5), rgba(96, 113, 118, 0.5)), url(../../assets/images/hero.webp); */
+    background-color: #3d5a80 ;
+    /* background-image: linear-gradient(rgba(96, 113, 118, 1), rgba(96, 113, 118, 1)), url(../../assets/images/water_background_3.jpeg); */
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100vw;
-    min-width: 100vw;
-    height: 100vh;
-    min-height: 100vh;
-    max-height: none;
-    left: 0%;
-    right: 0%;
-    top: 0%;
-    bottom: 0%;
+    height: 480px;
     overflow: hidden;
 }
 
@@ -28,22 +20,29 @@ h1 {
 
 .bubble_path {
     position: relative;
-    transform: translate(55%, 45%);
+    transform: translate(50%, 45%);
     width: 960px;
     height: 274, 5px;
 }
 
 
 ul {
+    list-style: initial;
+    color: white;
     margin-top: 60px;
-    margin-left: 55px;
+    margin-left: 85px;
     position: absolute;
 }
 
 li {
-    display: block;
+    display: list-item;
 }
 
 p {
     color: #fff;
+}
+
+
+.features {
+    
 }

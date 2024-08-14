@@ -23,15 +23,8 @@ ul {
     margin: 0;
     overflow: hidden;
     position: fixed;
-    text-align: center;
-    justify-content: center;
 }
 
-li {
-    display: inline-block;
-    margin: auto 10px;
-    text-align: center;
-}
 
 .sidebar {
     height: 100vh;
