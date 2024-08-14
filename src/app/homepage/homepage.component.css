@@ -1,11 +1,8 @@
 header {
-    margin-left: -150px;
     margin-top: -55px;
-    background-color: #3d5a80;
-    /* background-image: linear-gradient(rgba(96, 113, 118, 1), rgba(96, 113, 118, 1)), url(../../assets/images/water_background_3.jpeg); */
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 480px;
+    background: rgb(6, 66, 96);
+    background: linear-gradient(90deg, rgba(6, 66, 96, 1) 19%, rgba(61, 90, 128, 1) 100%);
+    height: 520px;
     overflow: hidden;
 }
 
@@ -28,12 +25,20 @@ ul {
 
 
 li {
-    display: list-item;
+    display: inline-table;
+    text-align: center;
+    
+}
+
+li span {
+    display: table-cell;
+    vertical-align: middle;
+    height: 48px; /* icon's height */
 }
 
 
-p {
-    color: #fff;
+.clear-body-content-margin {
+    margin-left: -150px;
 }
 
 
@@ -42,4 +47,18 @@ p {
     transform: translate(50%, 45%);
     width: 960px;
     height: 274, 5px;
+}
+
+
+.features {
+    background-color: #023047;
+    height: 260px;
+}
+
+
+.homepage-icon {
+    width: 48px;
+    height: 48px;
+    margin-right: 15px;
+    margin-left: 30px;
 }
