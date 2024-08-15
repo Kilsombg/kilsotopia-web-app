@@ -6,7 +6,7 @@ import { CalendarWrapperComponent } from './calendar/calendar-wrapper.component'
 import { HomepageComponent } from './homepage/homepage.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'calendar', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
     path: 'calendar', component: CalendarWrapperComponent,
     children: [

@@ -25,6 +25,7 @@ export class NavigationBarComponent {
     var currUrl = this.routingService.getCurrentUrl();
 
     switch (currUrl) {
+      case "":
       case "home": {
         this.active = Items.Home;
         break;
