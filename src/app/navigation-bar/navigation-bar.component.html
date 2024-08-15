@@ -1,5 +1,5 @@
 <ul>
-    <li><a [routerLink]="['/home']" [ngClass]="{'active': active===Items.Home}" (click)="onClickHome()">HOME</a></li>
-    <li><a [routerLink]="['/calendar']" [ngClass]="{'active': active===Items.Calendar}" (click)="onClickCalendar()">CALENDAR</a></li>
-    <li><a [routerLink]="['/others']" [ngClass]="{'active': active===Items.Others}" (click)="onClickOthers()">OTHERS</a></li>
+    <li><a [routerLink]="['/home']" [ngClass]="{'active': active===Items.Home}" (click)="checkActiveUrl()">HOME</a></li>
+    <li><a [routerLink]="['/calendar']" [ngClass]="{'active': active===Items.Calendar}" (click)="checkActiveUrl()">CALENDAR</a></li>
+    <li><a [routerLink]="['/others']" [ngClass]="{'active': active===Items.Others}" (click)="checkActiveUrl()">OTHERS</a></li>
 </ul>

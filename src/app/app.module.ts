@@ -13,6 +13,7 @@ import { CalendarModule } from './calendar/calendar.module';
 import { AppRoutingModule } from './app-routing.module';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { HomepageModule } from './homepage/homepage.module';
+import { RoutingService } from './services/routing.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { HomepageModule } from './homepage/homepage.module';
   ],
   providers: [
     HTTPService,
-    DateHelper,    
+    RoutingService,
+    DateHelper,
   ],
   bootstrap: [AppComponent]
 })

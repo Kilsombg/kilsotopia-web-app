@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { RoutingService } from '../services/routing.service';
+import { ActivatedRoute } from '@angular/router';
 
 enum Items {
   Home,
@@ -15,15 +17,29 @@ export class NavigationBarComponent {
   Items = Items;
   active: Items = Items.Calendar;
 
-  onClickHome(): void {
-    this.active = Items.Home;
+  constructor(private routingService: RoutingService) {
+    this.checkActiveUrl();
   }
 
-  onClickCalendar(): void {
-    this.active = Items.Calendar;
-  }
+  checkActiveUrl() {
+    var currUrl = this.routingService.getCurrentUrl();
 
-  onClickOthers(): void {
-    this.active = Items.Others;
+    switch (currUrl) {
+      case "home": {
+        this.active = Items.Home;
+        break;
+      }
+      case "calendar": {
+        this.active = Items.Calendar;
+        break;
+      }
+      case "others": {
+        this.active = Items.Others;
+        break;
+      }
+      default:
+        console.log("Active url not found in navigation! - " + currUrl);
+    }
   }
 }
+
