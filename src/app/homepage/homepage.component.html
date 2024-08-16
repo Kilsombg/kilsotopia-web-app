@@ -1,7 +1,7 @@
 <div class="clear-body-content-margin">
     <header>
         <h1>Welcome to <br>kilsotopia</h1>
-        <img class="bubble_path" src="../../assets/images/bubble_path_pixel_art_640x183.png">
+        <img class="bubble_path" src="../../assets/images/bubble_path_pixel_art_640x183.png" alt="bubble_path">
     </header>
     <section class="section-features">
         <ul id="section-features-ul">
@@ -18,8 +18,18 @@
         <section class="section-about-kilsotopia-information">
             <p>Hi I am Kilsom and I am a web developer who loves to code and experiment with different projects and
                 that's why I made Kilsotopia.</p>
-            <p>Kilsotopia is a place where I will put all my projects. Here you will be able to check out what my 
+            <p>Kilsotopia is a place where I will put all my projects. Here you will be able to check out what my
                 projects are about and if something catches your eye you can check it out.</p>
         </section>
+    </section>
+    <section class="section-calendar-to-do">
+        <div class="calendar-information">
+            <h2 id="seciton-calendar-title">Calendar-To-Do</h2>
+            <p id="seciton-calendar-information">In Calendar-To-Do you can make notes to specific day.
+                Just click on day and you can add, update or delete the note.</p>
+            <a class="calendar-btn-full" [routerLink]="['/calendar']">Check out</a>
+            <a class="hidden">see more</a>
+        </div>
+        <img class="calendar-image" src="../../assets/images/calendar/calendar_v1.png" alt="calendar-image">
     </section>
 </div>
