@@ -17,7 +17,7 @@ h1 {
 
 ul {
     list-style: initial;
-    color: white;
+    color: #fff;
     margin-top: 60px;
     margin-left: 85px;
     position: absolute;
@@ -50,15 +50,36 @@ li span {
 }
 
 
-.features {
+.section-features {
     background-color: #023047;
     height: 260px;
 }
-
 
 .homepage-icon {
     width: 48px;
     height: 48px;
     margin-right: 15px;
     margin-left: 30px;
+}
+
+.section-about-kilsotopia {
+    padding: 20px;
+    margin: 100px 20%;
+}
+
+.section-about-kilsotopia-title {
+    border-bottom: #3d5a80 2px solid;
+    border-bottom-style:outset;
+    margin: 0 20%;
+}
+
+
+.section-about-kilsotopia-title h2 {
+    color: #3d5a80;
+    margin: 10px 0;
+}
+
+
+.section-about-kilsotopia-information {
+    padding: 3%;
 }

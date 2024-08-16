@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RoutingService } from '../services/routing.service';
-import { ActivatedRoute } from '@angular/router';
 
 enum Items {
   Home,
