@@ -27,7 +27,7 @@
             <h2 id="seciton-calendar-title">Calendar-To-Do</h2>
             <p id="seciton-calendar-information">In Calendar-To-Do you can make notes to specific day.
                 Just click on day and you can add, update or delete the note.</p>
-            <a class="calendar-btn-full" [routerLink]="['/calendar']">Check out</a>
+            <a class="calendar-btn-full" [routerLink]="['/calendar']" (click)="onCalendarBtnClick()">Check out</a>
             <a class="hidden">see more</a>
         </div>
         <img class="calendar-image" src="../../assets/images/calendar/calendar_v1.png" alt="calendar-image">

@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RoutingService } from '../services/routing.service';
+import { NavigationService } from '../services/navigation.service';
 
-enum Items {
+export enum NavItem {
   Home,
   Calendar,
   Others
@@ -12,33 +13,32 @@ enum Items {
   templateUrl: './navigation-bar.component.html',
   styleUrls: ['./navigation-bar.component.css']
 })
-export class NavigationBarComponent {
-  Items = Items;
-  active: Items = Items.Calendar;
+export class NavigationBarComponent implements OnInit {
+  Items = NavItem;
+  active: NavItem;
 
-  constructor(private routingService: RoutingService) {
+  constructor(
+    private routingService: RoutingService,
+    private navigationService: NavigationService
+  ) {
     this.checkActiveUrl();
+  }
+
+  ngOnInit(): void {
+    this.navigationService.activeNavItemProperty$
+      .subscribe(alertedProperty => {
+        if (alertedProperty !== null) {
+          this.active = alertedProperty;
+        }
+      });
   }
 
   checkActiveUrl() {
     var currUrl = this.routingService.getCurrentUrl();
+    var activeOrNullNavItem = this.navigationService.getActiveNavItem(currUrl);
 
-    switch (currUrl) {
-      case "":
-      case "home": {
-        this.active = Items.Home;
-        break;
-      }
-      case "calendar": {
-        this.active = Items.Calendar;
-        break;
-      }
-      case "others": {
-        this.active = Items.Others;
-        break;
-      }
-      default:
-        console.log("Active url not found in navigation! - " + currUrl);
+    if (activeOrNullNavItem !== null) {
+      this.active = activeOrNullNavItem;
     }
   }
 }
