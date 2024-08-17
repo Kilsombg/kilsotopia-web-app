@@ -15,6 +15,7 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { HomepageModule } from './homepage/homepage.module';
 import { RoutingService } from './services/routing.service';
 import { NavigationService } from './services/navigation.service';
+import { LocationService } from './services/location.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,7 @@ import { NavigationService } from './services/navigation.service';
     HTTPService,
     RoutingService,
     NavigationService,
+    LocationService,
     DateHelper,
   ],
   bootstrap: [AppComponent]
