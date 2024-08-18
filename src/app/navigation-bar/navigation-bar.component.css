@@ -26,14 +26,14 @@ li a {
     color: #fff;
     font-weight: 400;
     padding: 0px 8px;
+    transition: background-color 0.2s ease-in-out;
+    border-radius: 8px;
 }
 
 li a:hover {
     background-color: #596e80;
-    border-radius: 8px;
 }
 
 .active {
     background-color: #324e63;
-    border-radius: 8px;
 }
