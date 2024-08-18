@@ -33,4 +33,7 @@
         </div>
         <img class="calendar-image" src="../../assets/images/calendar/calendar_v1.png" alt="calendar-image">
     </section>
+    <button mat-icon-button class="go-to-top" *ngIf="showTopButton" (click)="scrollToTop()">
+        <mat-icon>arrow_upward</mat-icon>
+      </button>
 </div>
