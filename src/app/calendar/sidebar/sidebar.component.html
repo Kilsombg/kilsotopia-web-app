@@ -1,7 +1,14 @@
-<p>
-    Calendar web app
-</p>
-<div class="navLinks">
-    <a [routerLink]="['/calendar']">Calendar</a>
-    <a [routerLink]="['/calendar/notes']">Notes</a>
+<div class="sidebar">
+    <h2>Calendar-To-Do</h2>
+    <ul>
+        <li>
+            <img class="filter-white sidebar-icon" src="../../../assets/images/calendar-icon.svg" alt="calendar-icon">
+            <a [routerLink]="['/calendar']">Calendar</a>
+        </li>
+        <li>
+            <img class="filter-white sidebar-icon" src="../../../assets/images/calendar/notes.icon.svg"
+                alt="notes-icon">
+            <a [routerLink]="['/calendar/notes']">Notes</a>
+        </li>
+    </ul>
 </div>
