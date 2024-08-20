@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
 import { CalendarWrapperComponent } from './calendar-wrapper.component';
+import { SidebarService } from './sidebar/sidebar.service';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { CalendarWrapperComponent } from './calendar-wrapper.component';
     DayHelper,
     DayService,
     DayDialogService,
+    SidebarService,
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
   ],
   bootstrap: []

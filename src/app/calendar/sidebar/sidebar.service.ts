@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { SidebarItem } from "../calendar/sidebar/sidebar.component";
+import { SidebarItem } from "./sidebar.component";
 
 @Injectable()
 export class SidebarService {
