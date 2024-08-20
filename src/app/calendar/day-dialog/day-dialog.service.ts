@@ -6,12 +6,14 @@ import { HTTPService } from "src/app/services/http.service";
 import { Day } from "../day/day.model";
 import { DateHelper } from "src/app/helpers/date.helper";
 import { DayType } from "../day/day-type";
+import { CalendarService } from "../calendar/calendar.service";
 
 @Injectable()
 export class DayDialogService {
 
     constructor(
         private dialog: MatDialog,
+        private calendarService: CalendarService,
         private httpService: HTTPService
     ) { }
 
@@ -37,8 +39,7 @@ export class DayDialogService {
         dialogRef.afterClosed().subscribe(result => {
             console.log("The dialog is closed");
 
-            if (!DateHelper.checkCurrentDate(day.date)) { day.dayType = DayType.NORMAL; }
-            else { day.dayType = DayType.CURRENT; }
+            this.calendarService.setDayType(day);
 
             if (result !== undefined) {
                 this.resolve(result, day);

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Day } from '../day/day.model';
-import { DayService } from '../day/day.service';
 import { DayHelper } from '../helpers/day.helper';
 import { DayType } from '../day/day-type';
 import { DateHelper } from '../../helpers/date.helper';
 import { DayDialogService } from '../day-dialog/day-dialog.service';
+import { CalendarService } from './calendar.service';
 
 @Component({
   selector: 'app-calendar',
@@ -15,10 +15,6 @@ export class CalendarComponent implements OnInit {
   dayType = DayType;
   calendarDays: Day[] = [];
   notes: Day[] = [];
-  monthOffset: number = 0;
-  yearOffset: number = 0;
-  currentMonth: number;
-  currentYear: number;
 
   weekDays: string[] = [
     'Mon',
@@ -31,11 +27,9 @@ export class CalendarComponent implements OnInit {
   ];
 
   constructor(
-    private dayService: DayService,
+    private calendarService: CalendarService,
     private dayDialogService: DayDialogService
-  ) {
-    this.initializeProperties();
-  }
+  ) { }
 
   ngOnInit(): void {
     this.initializeDays();
@@ -44,7 +38,7 @@ export class CalendarComponent implements OnInit {
   }
 
   subscribeToNotes() {
-    this.dayService.getNotes()
+    this.calendarService.getNotes()
       .subscribe(value => {
         this.notes = DayHelper.transformDayArray(value);
         this.setNotes(value);
@@ -52,30 +46,19 @@ export class CalendarComponent implements OnInit {
   }
 
   initializeDays() {
-    this.calendarDays = this.dayService.getCalendarDays(this.currentMonth + this.monthOffset, this.currentYear + this.yearOffset);
+    this.calendarDays = this.calendarService.getCalendarDays();
 
     this.setCalendarDayTypes();
   }
 
   setCalendarDayTypes() {
     this.calendarDays.forEach(day => {
-      if(DateHelper.checkCurrentDate(day.date)){
-        day.dayType = DayType.CURRENT;
-      } else if(day.date.getMonth() !== this.currentMonth){
-        day.dayType = DayType.OUTSIDE;
-      }
+      this.calendarService.setDayType(day);
     });
   }
 
-  initializeProperties() {
-    var currentDate = new Date(Date.now());
-
-    this.currentMonth = currentDate.getMonth();
-    this.currentYear = currentDate.getFullYear();
-  }
-
   onCLick(day: Day) {
-    this.dayService.setSelectedDay(day);
+    this.calendarService.setSelectedDay(day);
     this.dayDialogService.openDialog(day);
   }
 

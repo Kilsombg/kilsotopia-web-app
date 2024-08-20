@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { DayComponent } from './day/day.component';
-import { DayService } from './day/day.service';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DayDialogComponent } from './day-dialog/day-dialog.component';
 import { CalendarComponent } from './calendar/calendar.component';
@@ -15,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
 import { CalendarWrapperComponent } from './calendar-wrapper.component';
 import { SidebarService } from './sidebar/sidebar.service';
+import { CalendarService } from './calendar/calendar.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,7 @@ import { SidebarService } from './sidebar/sidebar.service';
   ],
   providers: [
     DayHelper,
-    DayService,
+    CalendarService,
     DayDialogService,
     SidebarService,
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
