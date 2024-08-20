@@ -33,7 +33,6 @@ export class SidebarComponent {
 
     if (activeOrNullSidebarItem !== null) {
       this.active = activeOrNullSidebarItem;
-      console.log(this.active);
     }
 
   }
