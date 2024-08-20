@@ -1,14 +1,14 @@
 <div class="sidebar">
     <h2>Calendar-To-Do</h2>
     <ul>
-        <li>
+        <li [routerLink]="['/calendar']" [ngClass]="{'active': active===sidebarItems.Calendar}" (click)="setActiveSidebarItem()">
             <img class="filter-white sidebar-icon" src="../../../assets/images/calendar-icon.svg" alt="calendar-icon">
-            <a [routerLink]="['/calendar']">Calendar</a>
+            <span>Calendar</span>
         </li>
-        <li>
+        <li [routerLink]="['/calendar/notes']" [ngClass]="{'active': active===sidebarItems.Notes}" (click)="setActiveSidebarItem()">
             <img class="filter-white sidebar-icon" src="../../../assets/images/calendar/notes.icon.svg"
                 alt="notes-icon">
-            <a [routerLink]="['/calendar/notes']">Notes</a>
+            <span>Notes</span>
         </li>
     </ul>
 </div>

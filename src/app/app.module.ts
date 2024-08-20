@@ -16,6 +16,7 @@ import { HomepageModule } from './homepage/homepage.module';
 import { RoutingService } from './services/routing.service';
 import { NavigationService } from './services/navigation.service';
 import { LocationService } from './services/location.service';
+import { SidebarService } from './services/sidebar.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +40,7 @@ import { LocationService } from './services/location.service';
     HTTPService,
     RoutingService,
     NavigationService,
+    SidebarService,
     LocationService,
     DateHelper,
   ],

@@ -5,13 +5,17 @@ import { filter, startWith } from "rxjs";
 @Injectable()
 export class RoutingService {
 
-    private currentUrl: string = "";
+    private currentUrl: string[] = [];
 
     constructor(private router: Router) {
         this.onRouterChange();
     }
 
     public getCurrentUrl(): string | null {
+        return this.currentUrl[0];
+    }
+
+    public getCurrentFullUrl(): string[] {
         return this.currentUrl;
     }
 
@@ -21,10 +25,12 @@ export class RoutingService {
             startWith(this.router))
             .subscribe((event: NavigationStart | any) => {
                 if (event.titleStrategy) {
-                    this.currentUrl = event.titleStrategy.title._doc.URL.split('/')[3]; // URL has 3 '/' before path starts
+                    var titleUrlArr = event.titleStrategy.title._doc.URL.split('/');
+                    this.currentUrl = titleUrlArr.splice(3, titleUrlArr.length); // URL has 3 '/' before path starts
                 }
                 else {
-                    this.currentUrl = event.url.split('/')[1];
+                    var urlArr = event.url.split('/');
+                    this.currentUrl = urlArr.splice(1,urlArr.length);
                 }
             });
     }

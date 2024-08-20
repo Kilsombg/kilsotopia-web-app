@@ -14,9 +14,10 @@ li {
     margin: 0 10px;
     padding: 10px 15px;
     display: flex;
+    cursor: pointer;
 }
 
-li a {
+li span {
     text-decoration: none;
     text-transform: capitalize;
     color: #fff;
