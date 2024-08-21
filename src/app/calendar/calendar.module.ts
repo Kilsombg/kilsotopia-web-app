@@ -15,6 +15,8 @@ import { AppRoutingModule } from '../app-routing.module';
 import { CalendarWrapperComponent } from './calendar-wrapper.component';
 import { SidebarService } from './sidebar/sidebar.service';
 import { CalendarService } from './calendar/calendar.service';
+import {DragDropModule} from '@angular/cdk/drag-drop'; 
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -29,9 +31,11 @@ import { CalendarService } from './calendar/calendar.service';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
+    MatIconModule,
     CKEditorModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DragDropModule
   ],
   providers: [
     DayHelper,
