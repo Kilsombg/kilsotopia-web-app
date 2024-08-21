@@ -14,9 +14,46 @@
     top: 0;
     right: 0;
     margin: 3px;
-    color:rgb(120, 135, 136);
+    color: rgb(120, 135, 136);
 }
 
 .dialog-close-icon:hover {
     background-color: rgb(220, 225, 226);
+}
+
+.dialog-btn-full,
+.dialog-btn-ghost {
+    transition: background-color 200ms ease-in-out;
+    padding: 10px;
+    margin: 0px 3px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.dialog-btn-full {
+    background-color: #0052cc;
+    color: #fff;
+    left: 30px;
+}
+
+.dialog-btn-full:hover {
+    background-color: #0747a6;
+}
+
+.dialog-btn-full:active {
+    background-color: #032776;
+}
+
+.dialog-btn-ghost {
+    background-color: #ebecf0;
+    color: #000;
+}
+
+.dialog-btn-ghost:hover {
+    background-color: #f2f4f7;
+}
+
+.dialog-btn-ghost:active {
+    background-color: #dbdce0;
 }

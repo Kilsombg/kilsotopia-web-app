@@ -1,16 +1,15 @@
 <div cdkDrag cdkDragRootElement=".cdk-overlay-pane" (cdkDragStarted)="dragStarted($event)"
     [cdkDragConstrainPosition]="computeDragRenderPos.bind(this)">
     <div class="day-dialog-drag-handle" cdkDragHandle>
-        <mat-icon class="dialog-close-icon" (click)="onBackClick()">close</mat-icon>
+        <mat-icon class="dialog-close-icon" (click)="onCancelClick()">close</mat-icon>
     </div>
     <h1 mat-dialog-title>{{data.date | date:'dd-MM-yyyy'}}</h1>
     <div mat-dialog-content>
-        <p>Notes</p>
         <ckeditor [(ngModel)]="data.notes" [editor]="Editor" [config]="{placeholder:'Add a note...', toolbar:[]}">
         </ckeditor>
     </div>
     <div mat-dialog-content>
-        <button mat-button (click)="onBackClick()">Back</button>
-        <button mat-button [mat-dialog-close]="data.notes">Save</button>
+        <button class="dialog-btn-full" mat-button [mat-dialog-close]="data.notes">Save</button>
+        <button class="dialog-btn-ghost" mat-button (click)="onCancelClick()">Cancel</button>
     </div>
 </div>

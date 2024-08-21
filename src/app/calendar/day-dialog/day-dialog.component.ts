@@ -18,7 +18,7 @@ export class DayDialogComponent {
     public dialogRef: MatDialogRef<DayDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data) { }
 
-  onBackClick(): void {
+  onCancelClick(): void {
     this.dialogRef.close();
   }
 

@@ -26,8 +26,8 @@ export class DayDialogService {
     getDialogConfig(data: any): MatDialogConfig {
         let dc = new MatDialogConfig();
 
-        dc.width = '800px';
-        dc.height = '600px';
+        dc.width = '560px';
+        dc.minHeight = '280px';
         dc.data = cloneDeep(data);
 
         return dc;
