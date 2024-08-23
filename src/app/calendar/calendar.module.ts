@@ -11,12 +11,12 @@ import { DayHelper } from './helpers/day.helper';
 import { DayDialogService } from './day-dialog/day-dialog.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { AppRoutingModule } from '../app-routing.module';
 import { CalendarWrapperComponent } from './calendar-wrapper.component';
 import { SidebarService } from './sidebar/sidebar.service';
 import { CalendarService } from './calendar/calendar.service';
 import {DragDropModule} from '@angular/cdk/drag-drop'; 
 import { MatIconModule } from '@angular/material/icon';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatIconModule,
     CKEditorModule,
     FormsModule,
-    AppRoutingModule,
+    SharedModule,
     DragDropModule
   ],
   providers: [

@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable } from "rxjs";
-import { NavItem } from "../navigation-bar/navigation-bar.component";
+import { NavItem } from "../../navigation-bar/navigation-bar.component";
 
 @Injectable()
 export class NavigationService {

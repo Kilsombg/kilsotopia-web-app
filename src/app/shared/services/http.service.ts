@@ -1,5 +1,5 @@
 import { Observable } from "rxjs";
-import { Day } from "../calendar/day/day.model";
+import { Day } from "../../calendar/day/day.model";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 

@@ -1,17 +1,25 @@
-ul {
-    list-style-type: none;
-    margin: 0;
-    overflow: hidden;
+nav {
     position: fixed;
     top: 0;
     width: 100%;
     background-color: #023047;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
     z-index: 100;
-    text-align: center;
     height: 55px;
     display: flex;
+    text-align: center;
     justify-content: center;
+}
+
+
+ul {
+    width: 70%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
 }
 
 li {
@@ -20,7 +28,7 @@ li {
     text-align: center;
 }
 
-li a {
+a {
     text-decoration: none;
     text-transform: uppercase;
     color: #fff;
@@ -33,6 +41,23 @@ li a {
 li a:hover {
     background-color: #596e80;
 }
+
+.nav-brand {
+    width: 15%;
+    margin: auto 0px;
+}
+
+
+.navbar-account-item {
+    position: relative;
+    background-color: transparent;
+    right: 0;
+    display: inline-flex;
+    text-align: center;
+    justify-content: center;
+    width: 15%;
+}
+
 
 .active {
     background-color: #324e63;

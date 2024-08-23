@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { RoutingService } from '../services/routing.service';
-import { NavigationService } from '../services/navigation.service';
+import { RoutingService } from '../shared/services/routing.service';
+import { NavigationService } from '../shared/services/navigation.service';
 
 export enum NavItem {
   Home,
   Calendar,
-  Others
+  Others,
+  Register,
+  Login
 }
 
 @Component({

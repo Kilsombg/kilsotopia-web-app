@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { MatDialog, MatDialogConfig, MatDialogRef } from "@angular/material/dialog";
 import { DayDialogComponent } from "./day-dialog.component";
 import { cloneDeep } from 'lodash';
-import { HTTPService } from "src/app/services/http.service";
+import { HTTPService } from "src/app/shared/services/http.service";
 import { Day } from "../day/day.model";
 import { CalendarService } from "../calendar/calendar.service";
 

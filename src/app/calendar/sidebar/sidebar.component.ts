@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
-import { RoutingService } from "src/app/services/routing.service";
+import { RoutingService } from "src/app/shared/services/routing.service";
 import { SidebarService } from "./sidebar.service";
 
 export enum SidebarItem {

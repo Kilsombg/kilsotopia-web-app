@@ -1,5 +1,19 @@
-<ul>
-    <li><a [routerLink]="['/home']" [ngClass]="{'active': active===Items.Home}" (click)="checkActiveUrl()">HOME</a></li>
-    <li><a [routerLink]="['/calendar']" [ngClass]="{'active': active===Items.Calendar}" (click)="checkActiveUrl()">CALENDAR</a></li>
-    <li><a [routerLink]="['/others']" [ngClass]="{'active': active===Items.Others}" (click)="checkActiveUrl()">OTHERS</a></li>
-</ul>
+<nav>
+    <!-- <span>Kilsotopia</span> -->
+    <a class="nav-brand" [routerLink]="['/home']" (click)="checkActiveUrl()">Kilsotopia</a>
+
+    <ul class="navbar-section-items">
+        <li><a [routerLink]="['/home']" [ngClass]="{'active': active===Items.Home}" (click)="checkActiveUrl()">HOME</a>
+        </li>
+        <li><a [routerLink]="['/calendar']" [ngClass]="{'active': active===Items.Calendar}"
+                (click)="checkActiveUrl()">CALENDAR</a></li>
+        <li><a [routerLink]="['/others']" [ngClass]="{'active': active===Items.Others}"
+                (click)="checkActiveUrl()">OTHERS</a></li>
+    </ul>
+
+    <ul class="navbar-account-item">
+        <li><a [routerLink]="['/account/register']" [ngClass]="{'active': active===Items.Register}">Sign up</a>
+        </li>
+        <li><a [routerLink]="['/account/login']" [ngClass]="{'active': active===Items.Login}">Login</a></li>
+    </ul>
+</nav>

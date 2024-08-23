@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Day } from '../day/day.model';
 import { DayHelper } from '../helpers/day.helper';
 import { DayType } from '../day/day-type';
-import { DateHelper } from '../../helpers/date.helper';
+import { DateHelper } from '../../shared/helpers/date.helper';
 import { DayDialogService } from '../day-dialog/day-dialog.service';
 import { CalendarService } from './calendar.service';
 

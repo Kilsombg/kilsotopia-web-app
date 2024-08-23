@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core";
 import { Day } from "../day/day.model";
-import { DateHelper } from "src/app/helpers/date.helper";
 import { Observable } from "rxjs";
-import { HTTPService } from "src/app/services/http.service";
+import { HTTPService } from "src/app/shared/services/http.service";
 import { DayType } from "../day/day-type";
+import { DateHelper } from "src/app/shared/helpers/date.helper";
 
 @Injectable()
 export class CalendarService {

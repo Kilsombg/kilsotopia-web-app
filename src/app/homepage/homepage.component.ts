@@ -1,7 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
-import { RoutingService } from '../services/routing.service';
-import { NavigationService } from '../services/navigation.service';
+import { RoutingService } from '../shared/services/routing.service';
+import { NavigationService } from '../shared/services/navigation.service';
 import { ViewportScroller } from '@angular/common';
 
 @Component({
