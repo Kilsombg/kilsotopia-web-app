@@ -38,11 +38,6 @@ li span {
 }
 
 
-.clear-body-content-margin {
-    margin-left: -150px;
-}
-
-
 .bubble_path {
     position: relative;
     transform: translate(50%, 45%);

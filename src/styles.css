@@ -42,6 +42,19 @@ ul {
 }
 
 
+button,
+input[type="submit"],
+input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+
 .sidebar {
     height: 100vh;
     width: 150px;
@@ -59,6 +72,11 @@ ul {
 }
 
 
+.clear-body-content-margin {
+    margin-left: -150px;
+}
+
+
 .filter-white {
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
 }
@@ -68,6 +86,82 @@ ul {
     min-height: 100px;
 }
 
+
+.input-wrapper {
+    position: relative;
+    /* To create space for floating inputs */
+    margin-top: 30px;
+    margin-inline: auto;
+    max-width: 400px;
+    min-width: 300px;
+}
+
+
+.input {
+    font-size: 16px;
+    width: 100%;
+    padding: 18px 4px 14px;
+    color: #333;
+    border: 1px solid #000;
+    border-radius: 3px;
+    box-shadow: none;
+    transition-property: border-color, box-shadow, -webkit-box-shadow;
+    transition-duration: 334ms;
+    background-color: transparent;
+
+    &:focus {
+        outline: none;
+        border-color: rgb(100, 120, 190);
+        box-shadow: 0 0 1px #0a66c2;
+    }
+
+    &::placeholder {
+        color: transparent;
+    }
+
+    /*  Hide Safari's autofill button */
+    &::-webkit-contacts-auto-fill-button {
+        visibility: hidden;
+        pointer-events: none;
+        position: absolute;
+    }
+}
+
+
+.label {
+    position: absolute;
+    top: 14px;
+    left: 0;
+    padding-left: 4px;
+    color: #43454e;
+    pointer-events: none;
+    transform-origin: left center;
+    transition: transform 250ms;
+}
+
+
+.input:focus+.label,
+.input:not(:placeholder-shown)+.label {
+    transform: translateY(-70%) scale(0.80);
+}
+
+.form-login-btn {
+    margin: 20px 2%;
+    padding: 15px;
+    width: 100%;
+    min-width: 250px;
+    color: #fff;
+    text-transform: capitalize;
+    background-color: #0a66c2;
+    transition: background-color 250ms ease-in-out;
+    border-radius: 25px;
+    position: relative;
+}
+
+
+.form-login-btn:hover {
+    background-color: #0a4692;
+}
 
 .hidden {
     display: none;
