@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RoutingService } from '../shared/services/routing.service';
 import { NavigationService } from '../shared/services/navigation.service';
+import { AccountService } from '../account/account.service';
 
 export enum NavItem {
   Home,
@@ -20,6 +21,7 @@ export class NavigationBarComponent implements OnInit {
   active: NavItem;
 
   constructor(
+    public accountService: AccountService,
     private routingService: RoutingService,
     private navigationService: NavigationService
   ) {
@@ -43,5 +45,9 @@ export class NavigationBarComponent implements OnInit {
       this.active = activeOrNullNavItem;
     }
   }
+
+  logout() {
+    this.accountService.logout();
+   }
 }
 

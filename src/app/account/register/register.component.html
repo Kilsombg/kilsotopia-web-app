@@ -1,19 +1,45 @@
 <div class="clear-body-content-margin">
     <div class="flex-container">
-        <form>
+        <form [formGroup]="registerForm" (ngSubmit)="register()" autocomplete="off">
             <h1>Create your account</h1>
             <div class="input-wrapper">
-                <input autocomplete="off" class="input" id="firstName" type="text" placeholder="First name">
+                <input formControlName="firstName" class="input" id="firstName" type="text" placeholder="First name"
+                    [ngClass]="{'input-invalid': submitted && registerForm.get('firstName')?.errors}">
                 <label class="label" for="firstName">First name</label>
+                <span class="text-danger" *ngIf="submitted && registerForm.get('firstName')?.hasError('required')">
+                    First name is required
+                </span>
+                <span class="text-danger"
+                    *ngIf="submitted && 
+                registerForm.get('firstName')?.hasError('minlength') || registerForm.get('firstName')?.hasError('maxlength')">
+                    First name must be at least 3, and maximum 15 characters
+                </span>
             </div>
             <div class="input-wrapper">
-                <input autocomplete="off" class="input" id="email" type="text" placeholder="Email">
+                <input formControlName="email" class="input" id="email" type="text" placeholder="Email"
+                    [ngClass]="{'input-invalid': submitted && registerForm.get('email')?.errors}">
                 <label class="label" for="email">Email</label>
+                <span class="text-danger" *ngIf="submitted && registerForm.get('email')?.hasError('required')">
+                    Email is required
+                </span>
+                <span class="text-danger" *ngIf="submitted && registerForm.get('email')?.hasError('pattern')">
+                    Invalid email address
+                </span>
             </div>
             <div class="input-wrapper">
-                <input autocomplete="off" class="input" type="password" id="password" placeholder="Password">
+                <input formControlName="password" class="input" type="password" id="password" placeholder="Password"
+                    [ngClass]="{'input-invalid': submitted && registerForm.get('password')?.errors}">
                 <label class="label" for="password">Password</label>
+                <span class="text-danger" *ngIf="submitted && registerForm.get('password')?.hasError('required')">
+                    Password is required
+                </span>
+                <span class="text-danger"
+                    *ngIf="submitted && 
+                registerForm.get('password')?.hasError('minlength') || registerForm.get('password')?.hasError('maxlength')">
+                    Password must be at least 6, and maximum 15 characters
+                </span>
             </div>
+            <app-validation-messages *ngIf="errorMessages.length > 0" [errorMessages]="errorMessages"></app-validation-messages>
             <button class="form-login-btn" type="submit">Sign Up</button>
         </form>
     </div>

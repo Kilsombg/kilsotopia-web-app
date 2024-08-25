@@ -11,9 +11,15 @@
                 (click)="checkActiveUrl()">OTHERS</a></li>
     </ul>
 
-    <ul class="navbar-account-item">
-        <li><a [routerLink]="['/account/register']" [ngClass]="{'active': active===Items.Register}">Sign up</a>
-        </li>
+    <ul class="navbar-account-item" *ngIf="(accountService.user$ | async) === null">
+        <li><a [routerLink]="['/account/register']" [ngClass]="{'active': active===Items.Register}">Sign up</a></li>
         <li><a [routerLink]="['/account/login']" [ngClass]="{'active': active===Items.Login}">Login</a></li>
     </ul>
+
+    <div class="navbar-account-item" *ngIf="(accountService.user$ | async) as User">
+        <div class="btn-nav-logout flex-justify-center">
+            <mat-icon class="filter-white">logout</mat-icon>
+            <a (click)="logout()">Logout</a>
+        </div>
+    </div>
 </nav>

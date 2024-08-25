@@ -11,7 +11,9 @@ body {
 
 
 h1,
-h2 {
+h2,
+h3,
+h4 {
     font-weight: 300;
     text-transform: uppercase;
 }
@@ -30,6 +32,12 @@ h2 {
     word-spacing: 2px;
     text-align: center;
     margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+h4 {
+    font-size: 24px;
+    word-spacing: 1.5px;
     letter-spacing: 1px;
 }
 
@@ -89,6 +97,8 @@ input[type="reset"] {
 
 .input-wrapper {
     position: relative;
+    display: flex;
+    flex-direction: column;
     /* To create space for floating inputs */
     margin-top: 30px;
     margin-inline: auto;
@@ -161,6 +171,13 @@ input[type="reset"] {
 
 .form-login-btn:hover {
     background-color: #0a4692;
+}
+
+.text-danger {
+    max-width: 300px;
+    color: #C7001D;
+    display: block;
+    text-align: left;
 }
 
 .hidden {

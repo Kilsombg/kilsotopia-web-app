@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LocationService } from './shared/services/location.service';
+import { AccountService } from './account/account.service';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +10,27 @@ import { LocationService } from './shared/services/location.service';
 export class AppComponent implements OnInit {
   title = 'calendar-web-app';
 
-  constructor(private locationService: LocationService) { }
+  constructor(
+    private locationService: LocationService,
+    private accountService: AccountService
+  ) { }
 
   ngOnInit(): void {
+    this.refreshUser();
     this.locationService.addPopstateListener();
+  }
+
+  private refreshUser() {
+    const jwt = this.accountService.getJWT();
+    if (jwt) {
+      this.accountService.refreshUser(jwt).subscribe({
+        next: _ => { },
+        error: _ => {
+          this.accountService.logout();
+        }
+      })
+    } else {
+      this.accountService.refreshUser(null).subscribe();
+    }
   }
 }

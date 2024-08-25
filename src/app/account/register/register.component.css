@@ -15,3 +15,7 @@ h1 {
     width: 30%;
     margin: 10% 35% 0 35%;
 }
+
+.input-invalid {
+    border-color: #C7001D;
+}

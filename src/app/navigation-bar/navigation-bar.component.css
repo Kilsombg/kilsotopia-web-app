@@ -34,7 +34,7 @@ a {
     color: #fff;
     font-weight: 400;
     padding: 0px 8px;
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 200ms ease-in-out;
     border-radius: 8px;
 }
 
@@ -58,6 +58,24 @@ li a:hover {
     width: 15%;
 }
 
+.flex-justify-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-nav-logout {
+    transition: background-color 200ms ease-in-out;
+    margin: 2% 0;
+    padding: 5px;
+    border-radius: 10px;
+    transform: scale(80%);
+    cursor: pointer;
+}
+
+.btn-nav-logout:hover {
+    background-color: #596e80;
+}
 
 .active {
     background-color: #324e63;

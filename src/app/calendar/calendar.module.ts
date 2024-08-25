@@ -3,19 +3,16 @@ import { DayComponent } from './day/day.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DayDialogComponent } from './day-dialog/day-dialog.component';
 import { CalendarComponent } from './calendar/calendar.component';
-import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { DayHelper } from './helpers/day.helper';
 import { DayDialogService } from './day-dialog/day-dialog.service';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { CalendarWrapperComponent } from './calendar-wrapper.component';
 import { SidebarService } from './sidebar/sidebar.service';
 import { CalendarService } from './calendar/calendar.service';
 import {DragDropModule} from '@angular/cdk/drag-drop'; 
-import { MatIconModule } from '@angular/material/icon';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
@@ -28,12 +25,9 @@ import { SharedModule } from '../shared/shared.module';
   ],
   imports: [
     CommonModule,
-    MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule,
     CKEditorModule,
-    FormsModule,
     SharedModule,
     DragDropModule
   ],
@@ -41,8 +35,7 @@ import { SharedModule } from '../shared/shared.module';
     DayHelper,
     CalendarService,
     DayDialogService,
-    SidebarService,
-    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
+    SidebarService
   ],
   bootstrap: []
 })
