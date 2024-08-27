@@ -1,0 +1,41 @@
+.container {
+    display: block;
+    margin-top: 105px;
+}
+
+
+.text-center {
+    text-align: center;
+}
+
+
+.btn {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+
+.btn-primary {
+    padding: 5px;
+    color: #fff;
+    padding: 8px;
+    color: #fff;
+    background-color: #1737c3;
+    border-radius: 5px;
+}
+
+
+.btn-primary:hover {
+    background-color: #0c248f;
+}
+
+
+.btn-primary:active {
+    background-color: #071a6b;
+}
+
+.btn-link {
+    color: #1b76d0;
+    text-decoration: underline;
+}

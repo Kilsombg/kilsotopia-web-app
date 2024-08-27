@@ -1,12 +1,16 @@
 ul {
+    position: relative;
     display: inline;
     list-style-type: disc;
     /* thats padding for top */
     padding-left: 10px;
+    max-width: inherit;
 }
 
 li {
+    position: relative;
     list-style: disc;
     margin-top: 5px;
-    max-width: 300px;
+    margin-left: 20px;
+    max-width: inherit;
 }

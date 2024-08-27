@@ -17,9 +17,10 @@ h1 {
 }
 
 .forgot-password {
-    color: #425097;
+    color: #1b76d0;
     margin: 10px 0;
     text-align: left;
+    text-decoration: none;
     display: block;
     cursor: pointer;
     width: fit-content;
@@ -27,5 +28,29 @@ h1 {
 }
 
 .forgot-password:hover {
-    border-bottom: 1px solid #425097;
+    border-bottom: 1px solid #1b76d0;
+}
+
+
+.text-wrap {
+    display: block;
+    max-width: 300px;
+    margin-top: 15px;
+}
+
+
+.btn {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.btn-link {
+    color: #1b76d0;
+    text-decoration: underline;
+}
+
+
+.error-messages-text {
+    max-width: 300px;
 }

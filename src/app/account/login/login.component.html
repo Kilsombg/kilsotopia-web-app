@@ -6,23 +6,28 @@
                 <input formControlName="userName" autocomplete="off" class="input" id="userName" type="text"
                     placeholder="Email" [ngClass]="{'input-invalid': submitted && loginForm.get('userName')?.errors}">
                 <label class="label" for="userName">Email</label>
-                <span class="text-danger" 
-                *ngIf="submitted && loginForm.get('userName')?.hasError('required') && errorMessages.length === 0">
+                <span class="text-danger"
+                    *ngIf="submitted && loginForm.get('userName')?.hasError('required') && errorMessages.length === 0">
                     Please enter an email address.
                 </span>
             </div>
             <div class="input-wrapper">
                 <input formControlName="password" class="input" type="password" id="password" placeholder="Password"
-                [ngClass]="{'input-invalid': submitted && loginForm.get('password')?.errors}">
+                    [ngClass]="{'input-invalid': submitted && loginForm.get('password')?.errors}">
                 <label class="label" for="password">Password</label>
-                <span class="text-danger" 
-                *ngIf="submitted && loginForm.get('password')?.hasError('required') && errorMessages.length === 0">
+                <span class="text-danger"
+                    *ngIf="submitted && loginForm.get('password')?.hasError('required') && errorMessages.length === 0">
                     Please enter a password.
                 </span>
             </div>
-            <app-validation-messages *ngIf="errorMessages.length > 0" [errorMessages]="errorMessages"></app-validation-messages>
-            <a class="forgot-password">Forgot password?</a>
-            <button class="form-login-btn" type="submit">Log In</button>
+            <app-validation-messages class="error-messages-text" *ngIf="errorMessages.length > 0"
+                [errorMessages]="errorMessages"></app-validation-messages>
+            <a class="btn btn-link text-wrap" (click)="resendEmailConfirmationLink()"
+            *ngIf="errorMessages[0]?.includes('Please confirm your email')">
+                Click here to resend email confirmation link in case you didn't receive it.
+            </a>
+            <a class="forgot-password" [routerLink]="['/account/send-email/forgot-username-or-password']">Forgot password?</a>
+            <button class="form-btn" type="submit">Log In</button>
         </form>
     </div>
 </div>

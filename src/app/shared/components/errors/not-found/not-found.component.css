@@ -1,0 +1,52 @@
+a {
+    text-decoration: none;
+}
+
+.not-found-page {
+    position: relative;
+    display: block;
+    margin-top: 150px;
+    text-align: center;
+    justify-content: center;
+}
+
+.not-found {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.not-found-title {
+    display: block;
+    color: #0a66c2;
+    font-size: 36px;
+    text-transform: none;
+    font-weight: bold;
+}
+
+
+.not-found-body {
+    display: block;
+    margin: 0 30%;
+    color: #0a66f2;
+}
+
+
+.btn-go-homepage {
+    display:inline-block;
+    margin-top: 20px;
+    padding: 15px;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: #0a66c2;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.btn-go-homepage:hover {
+    background-color: #0959a9;
+}
+
+.btn-go-homepage:active {
+background-color: #094c90;
+}

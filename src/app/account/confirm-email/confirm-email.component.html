@@ -1,0 +1,12 @@
+<div class="container text-center clear-body-content-margin" *ngIf="success">
+    <p>You can login now. Click on the button to go to the login page.</p>
+    <a class="btn btn-primary" [routerLink]="['/account/login']">
+        Login
+    </a>
+</div>
+
+<div class="container text-center clear-body-content-margin" *ngIf="!success">
+    <a class="btn btn-link" (click)="resendEmailConfirmationLink()">
+        Click here to resend email confirmation link
+    </a>
+</div>

@@ -155,7 +155,7 @@ input[type="reset"] {
     transform: translateY(-70%) scale(0.80);
 }
 
-.form-login-btn {
+.form-btn {
     margin: 20px 2%;
     padding: 15px;
     width: 100%;
@@ -169,7 +169,7 @@ input[type="reset"] {
 }
 
 
-.form-login-btn:hover {
+.form-btn:hover {
     background-color: #0a4692;
 }
 

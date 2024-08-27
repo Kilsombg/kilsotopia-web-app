@@ -13,7 +13,7 @@ export class SharedService {
   showNotification(isSuccess: boolean, title: string, message: string) {
     const dc = new MatDialogConfig();
     dc.width = '480px';
-    dc.height = '210px';
+    dc.height = '250px';
     dc.data = {
       isSuccess: isSuccess,
       title: title,

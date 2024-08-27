@@ -1,0 +1,34 @@
+<div class="clear-body-content-margin" *ngIf="mode.includes('resend-email-confirmation-link') || mode.includes('forgot-username-or-password')">
+    <div class="flex-container">
+        <form [formGroup]="emailForm" (ngSubmit)="sendEmail()" autocomplete="off">
+            <h1>
+                <span *ngIf="mode.includes('resend-email-confirmation-link')">
+                    Resend email confirmation
+                </span>
+                <span *ngIf="mode.includes('forgot-username-or-password')">
+                    Retrieve your username or password
+                </span>
+            </h1>
+
+            <div class="input-wrapper">
+                <input formControlName="email" class="input" id="email" type="text" placeholder="Email"
+                    [ngClass]="{'input-invalid': submitted && emailForm.get('email')?.errors}">
+                <label class="label" for="email">Email</label>
+                <span class="text-danger" *ngIf="submitted && emailForm.get('email')?.hasError('required')">
+                    Email is required
+                </span>
+                <span class="text-danger" *ngIf="submitted && emailForm.get('email')?.hasError('pattern')">
+                    Invalid email address
+                </span>
+            </div>
+
+            <app-validation-messages class="error-messages-text" *ngIf="errorMessages.length > 0"
+                [errorMessages]="errorMessages"></app-validation-messages>
+
+            <div class="send-email-btn-container">
+                <button class="form-btn btn-row-2" type="submit">Send</button>
+                <button class="form-btn btn-row-2 btn-ghost" type="submit" (click)="cancel()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

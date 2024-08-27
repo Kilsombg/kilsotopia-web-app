@@ -33,14 +33,13 @@
                 <span class="text-danger" *ngIf="submitted && registerForm.get('password')?.hasError('required')">
                     Password is required
                 </span>
-                <span class="text-danger"
-                    *ngIf="submitted && 
+                <span class="text-danger" *ngIf="submitted && 
                 registerForm.get('password')?.hasError('minlength') || registerForm.get('password')?.hasError('maxlength')">
                     Password must be at least 6, and maximum 15 characters
                 </span>
             </div>
-            <app-validation-messages *ngIf="errorMessages.length > 0" [errorMessages]="errorMessages"></app-validation-messages>
-            <button class="form-login-btn" type="submit">Sign Up</button>
+            <app-validation-messages class="error-messages-text" *ngIf="errorMessages.length > 0" [errorMessages]="errorMessages"></app-validation-messages>
+            <button class="form-btn" type="submit">Sign Up</button>
         </form>
     </div>
 </div>
