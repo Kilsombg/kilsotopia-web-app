@@ -6,9 +6,19 @@ h1 {
     text-align: start;
 }
 
+form {
+    display: block;
+}
+
+.login-form {
+    display: block;
+    margin: 0 auto;
+}
+
 
 .flex-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -53,4 +63,66 @@ h1 {
 
 .error-messages-text {
     max-width: 300px;
+}
+
+.alternate-signin-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10%;
+}
+
+
+.or-separator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.or-separator span {
+    text-transform: lowercase;
+    margin: 0 15px;
+    color: #7e7e7e;
+}
+
+
+.alternate-signin-container .or-separator::before,
+.alternate-signin-container .or-separator::after {
+    content: "";
+    display: inline-block;
+    background-color: #aeaeae;
+    width: 50%;
+    height: 1px;
+}
+
+
+.google-btn { 
+    position: relative;
+    margin: 20px 6%;
+    padding: 15px;
+    color: #5e5e5e;
+    border: 1px solid #5e5e5e;
+    border-radius: 25px;
+    transition: background-color 250ms ease-in-out;
+}
+
+
+.google-btn:hover { 
+ background-color: #eee;
+}
+
+
+.icon {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.google-btn span {
+    position: relative;
+    display: inline-block;
+    height: 16px;
 }

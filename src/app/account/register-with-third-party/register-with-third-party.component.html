@@ -1,0 +1,23 @@
+<div class="clear-body-content-margin" *ngIf="provider && access_token && userId">
+    <div class="flex-container">
+        <form class="reg-form" [formGroup]="registerForm" (ngSubmit)="register()" autocomplete="off">
+            <h1>Creating an account using your <span class="provider-txt">{{provider | titlecase}}</span></h1>
+            <div class="input-wrapper">
+                <input formControlName="firstName" class="input" id="firstName" type="text" placeholder="First name"
+                    [ngClass]="{'input-invalid': submitted && registerForm.get('firstName')?.errors}">
+                <label class="label" for="firstName">First name</label>
+                <span class="text-danger" *ngIf="submitted && registerForm.get('firstName')?.hasError('required')">
+                    First name is required
+                </span>
+                <span class="text-danger"
+                    *ngIf="submitted && 
+                registerForm.get('firstName')?.hasError('minlength') || registerForm.get('firstName')?.hasError('maxlength')">
+                    First name must be at least 3, and maximum 15 characters
+                </span>
+            </div>
+            
+            <app-validation-messages class="error-messages-text" *ngIf="errorMessages.length > 0" [errorMessages]="errorMessages"></app-validation-messages>
+            <button class="form-btn" type="submit">Sign Up</button>
+        </form>
+    </div>
+</div>

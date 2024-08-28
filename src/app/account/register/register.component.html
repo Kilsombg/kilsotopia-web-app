@@ -1,6 +1,6 @@
 <div class="clear-body-content-margin">
     <div class="flex-container">
-        <form [formGroup]="registerForm" (ngSubmit)="register()" autocomplete="off">
+        <form class="reg-form" [formGroup]="registerForm" (ngSubmit)="register()" autocomplete="off">
             <h1>Create your account</h1>
             <div class="input-wrapper">
                 <input formControlName="firstName" class="input" id="firstName" type="text" placeholder="First name"
@@ -41,5 +41,10 @@
             <app-validation-messages class="error-messages-text" *ngIf="errorMessages.length > 0" [errorMessages]="errorMessages"></app-validation-messages>
             <button class="form-btn" type="submit">Sign Up</button>
         </form>
+
+        <div class="alternate-signin-container">
+            <div class="or-separator"><span>or</span></div>
+            <div class="google-btn" #googleButton></div>
+        </div>
     </div>
 </div>

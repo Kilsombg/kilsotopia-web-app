@@ -1,6 +1,6 @@
 <div class="clear-body-content-margin">
     <div class="flex-container">
-        <form [formGroup]="loginForm" (ngSubmit)="login()" autocomplete="off">
+        <form class="login-form" [formGroup]="loginForm" (ngSubmit)="login()" autocomplete="off">
             <h1>Login</h1>
             <div class="input-wrapper">
                 <input formControlName="userName" autocomplete="off" class="input" id="userName" type="text"
@@ -29,5 +29,10 @@
             <a class="forgot-password" [routerLink]="['/account/send-email/forgot-username-or-password']">Forgot password?</a>
             <button class="form-btn" type="submit">Log In</button>
         </form>
+
+        <div class="alternate-signin-container">
+            <div class="or-separator"><span>or</span></div>
+            <div class="google-btn" #googleButton></div>
+        </div>
     </div>
 </div>

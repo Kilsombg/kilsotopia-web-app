@@ -7,24 +7,80 @@ h1 {
     text-align: start;
 }
 
-h1::first-letter {
-    text-transform: uppercase;
+
+form {
+    display: block;
+}
+
+
+.reg-form {
+    display: block;
+    margin: 0 auto;
 }
 
 
 .flex-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     width: 30%;
-    margin: 10% 35% 0 35%;
+    margin: 8% 35% 0 35%;
 }
+
+
+h1::first-letter {
+    text-transform: uppercase;
+}
+
+
 
 .input-invalid {
     border-color: #C7001D;
 }
 
+
 .error-messages-text {
     max-width: 300px;
+}
+
+
+.alternate-signin-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10%;
+}
+
+
+.or-separator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.or-separator span {
+    text-transform: lowercase;
+    margin: 0 15px;
+    color: #7e7e7e;
+}
+
+
+.alternate-signin-container .or-separator::before,
+.alternate-signin-container .or-separator::after {
+    content: "";
+    display: inline-block;
+    background-color: #aeaeae;
+    width: 50%;
+    height: 1px;
+}
+
+
+.google-btn { 
+    position: relative;
+    margin: 20px 8%;
+    padding: 15px;
+    transform: scale(1.1);
 }

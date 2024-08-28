@@ -1,0 +1,52 @@
+form {
+    display: block;
+}
+
+
+h1 {
+    display: block;
+    font-size: 30px;
+    font-weight: 400;
+    color: #000;
+    text-transform: none;
+    text-align: start;
+    max-width: 300px;
+}
+
+
+.provider-txt {
+    color: #C7001D;
+}
+
+
+.reg-form {
+    display: block;
+    margin: 0 auto;
+}
+
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 30%;
+    margin: 8% 35% 0 35%;
+}
+
+
+h1::first-letter {
+    text-transform: uppercase;
+}
+
+
+
+.input-invalid {
+    border-color: #C7001D;
+}
+
+
+.error-messages-text {
+    max-width: 300px;
+}
