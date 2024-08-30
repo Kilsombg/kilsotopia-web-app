@@ -99,30 +99,7 @@ form {
 
 .google-btn { 
     position: relative;
-    margin: 20px 6%;
+    margin: 20px 8%;
     padding: 15px;
-    color: #5e5e5e;
-    border: 1px solid #5e5e5e;
-    border-radius: 25px;
-    transition: background-color 250ms ease-in-out;
-}
-
-
-.google-btn:hover { 
- background-color: #eee;
-}
-
-
-.icon {
-    position: relative;
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    margin-right: 5px;
-}
-
-.google-btn span {
-    position: relative;
-    display: inline-block;
-    height: 16px;
+    transform: scale(1.1);
 }
